@@ -1,0 +1,226 @@
+16)
+import java.util.*;
+
+class Q16{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number: ");
+        int num = sc.nextInt();
+        for(int i=1; i<=10; i++)
+        {
+			System.out.println(num+" * "+i+" = "+num*i);
+		}			
+	}
+}
+
+17)
+import java.util.*;
+
+class Q17{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter The number: ");
+		int num = sc.nextInt();
+		int revnum=0;
+		while(num!=0)
+		{
+			int lno=num%10;
+			revnum=revnum*10+lno;
+			num=num/10;
+		}
+		System.out.println(revnum);
+	}
+}
+
+18)
+import java.util.*;
+
+class Q18{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number to check: ");
+		int num = sc.nextInt();
+		int n = num/2;
+		int flag=0;
+		for(int i=2; i<=n; i++)
+		{
+			if(num%i == 0)
+			{
+				flag=1;
+				break;
+			}
+		}
+		if(flag==0)
+		{
+			System.out.println("Prime number");
+		}
+		else
+		{
+			System.out.println("Not a prime number");
+		}
+	}
+}
+
+19)
+import java.util.*;
+
+class Q19{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number untill you have to print: ");
+		int num = sc.nextInt();
+		for(int i=12; i<=num; i+=10)
+		{
+			System.out.println(i);
+		}
+	}
+}
+
+20)
+import java.util.*;
+
+class Q20{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter two numbers: ");
+		int min = sc.nextInt();
+		int max = sc.nextInt();
+		for(int i=min; i<=max; i++)
+		{
+			if(i==1 || i==0)
+			{
+				continue;
+			}
+			else
+			{
+				int num = i/2;
+				int flag = 0;
+				for(int k=2; k<=num; k++)
+					{
+						if(i%k == 0)
+					{
+						flag = 1;
+					}
+					}
+					if(flag==0)
+					{
+						System.out.println(i);
+					}
+				
+			}
+		}
+	}
+}
+
+21)
+import java.util.*;
+
+class Q21{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter 10 numbers: ");
+		int arr[] = new int[10];
+		for(int i=0; i<10; i++)
+		{
+			arr[i] = sc.nextInt();
+		}
+		int sum = 0;
+		for(int ar : arr)
+		{
+			sum=sum+ar;
+		}
+		
+		System.out.println("Sum of numbers are: "+sum+" Average of numbers are: "+sum/10);
+	}
+}
+
+22)
+import java.util.*;
+
+class Q22{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter 10 numbers: ");
+		int arr[] = new int[10];
+		for(int i=0; i<10; i++)
+		{
+			arr[i] = sc.nextInt();
+		}
+		
+		for(int i=0; i<arr.length; i++){
+			int max = arr[i];
+			int m = 0;
+			for(int j=i; j<arr.length; j++)
+			{
+				if(arr[j]>max)
+				{
+					max = arr[j];
+					m = j;
+				}
+			}
+			arr[m] = arr[i];
+			arr[i] = max;
+		}
+		for(int i=0; i<10; i++)
+		{
+			System.out.print(arr[i]+" ");
+		}
+	}
+}
+
+23)
+class Q23{
+	public static void main(String args[]){
+		int arr[] = {5,4,6,8,7,9,6,3,1,7};
+		int j = arr.length-1;
+		for(int i=0; i<arr.length/2; i++)
+		{
+			int temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+			j--;
+		}
+		for(int ar :  arr)
+		{
+			System.out.println(ar);
+		}
+	}
+}
+
+24)
+class Q24{
+	public static void main(String args[]){
+		int arr[] = {1,2,5,4,6,9,8,7,3,5};
+	    int search = 5;
+	    for(int i=0; i<arr.length; i++)
+	    {
+		    if(arr[i] == search)
+		    {
+			    System.out.println("Element found at index: "+i);
+		    }
+	    }
+	}
+}
+
+25)
+class Q25{
+	public static void main(String args[]){
+		int arr[] = {1,2,5,4,7,8,9,6,3,5};
+		int SumOdd = 0;
+		int SumEven = 0;
+		for(int ar : arr)
+		{
+			if(ar%2 == 0)
+			{
+				SumEven = SumEven + ar;
+			}
+			else
+			{
+				SumOdd = SumOdd + ar;
+			}
+		}
+		System.out.println("Sum of odd numbers in array are: "+SumOdd+"\nSum of Even numbers in array is: "+SumEven
+		);
+	}
+}
