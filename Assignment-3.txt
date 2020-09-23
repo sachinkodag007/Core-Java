@@ -1,0 +1,121 @@
+26)
+import java.util.*;
+
+class Q26{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		int [][] arr = new int[5][27];
+		for(int i=0; i<5; i++){
+			for(int j=0; j<27; j++){
+				arr[i][j]=sc.nextInt();
+			}
+		}
+		int sum = 0;
+		for(int i=0; i<5; i++){
+			for(int j=0; j<27; j++){
+				sum = sum + arr[i][j];
+			}
+		}
+		
+		System.out.println("Sum of all elements is: "+sum);
+	}
+}
+
+27)
+class Q27{
+	public static void main(String args[]){
+		int arr[] = {10,2,5,4,78,65,71};
+		int min = arr[0];
+		int	max = arr[0];
+		for(int i=0; i<arr.length; i++){
+			if(arr[i]<min)
+			{
+				min=arr[i];
+			}
+			if(arr[i]>max)
+			{
+				max=arr[i];
+			}
+		}
+		System.out.println(min+" "+max);
+	}
+}
+
+28)
+class Q28{
+	public static void main(String args[]){
+		int arr[] = {1,23,4,5,6};
+		for(int ar : arr){
+			System.out.println(ar);
+		}
+	}
+}
+
+29)
+import java.util.Scanner;
+
+class Q29{
+   public static void main(String args[]){
+	   int arr[][] = {{1,2,3,4},{5,6,7,8},{5,4,6,3}};
+	   int row=0;
+       for(int a[] : arr){
+		   for(int ar : a){
+			   System.out.println(ar);
+		   }
+		   row++;
+	   }
+        System.out.println("Numbers of Rows are: "+row);	   
+   }
+}
+
+30)
+import java.util.Scanner;
+
+class Q30{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		int arr[][] = new int[3][3];
+		for(int i=0; i<3; i++){
+			for(int j=0; j<3; j++){
+				arr[i][j] = sc.nextInt();
+			}
+		}
+		int sum = 0;
+		for(int i=0; i<3; i++){
+			for(int j=0; j<3; j++){
+				if(i==j){
+					sum = sum + arr[i][j];
+				}
+			}
+		}
+		
+		System.out.println("Sum of Diagonal elements are: "+sum);
+	}
+}
+
+31)
+import java.util.Scanner;
+
+class Student{
+	private int rNo;
+	private String sName;
+	
+	void setData(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter roll no: ");
+		rNo = sc.nextInt();
+		System.out.println("Enter name: ");
+		sName = sc.next();
+	}
+	void showData(){
+		System.out.println("roll no: "+rNo+" Name: "+sName);
+	}
+}
+
+class StudentDemo{
+	public static void main(String args[]){
+		Student s = new Student();
+		s.setData();
+		s.showData();
+	}
+}
