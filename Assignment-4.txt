@@ -1,0 +1,467 @@
+32)
+import java.util.Scanner;
+
+class Student{
+	private int rNo;
+	private String sName;
+	static int count = 0;
+	
+	void setData(){
+		count++;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter roll no: ");
+		rNo = sc.nextInt();
+		System.out.println("Enter name: ");
+		sName = sc.next();
+	}
+	void showData(){
+		System.out.println("roll no: "+rNo+" Name: "+sName);
+		System.out.println("Count of students are: "+count);
+	}
+}
+
+class Q32{
+	public static void main(String args[]){
+		Student s = new Student();
+		s.setData();
+		s.showData();
+		s.setData();
+		s.showData();
+		s.setData();
+		s.showData();
+	}
+}
+
+33)
+class Add{
+	int a, b, c;
+	void add(int a, int b)
+	{
+		this.a = a;
+		this.b = b;
+	}
+	void show()
+	{
+		this.c = a+b;
+		System.out.println("Addition of numbers are: "+c);
+	}
+}
+
+class Q33{
+	public static void main(String args[]){
+		Add x = new Add();
+		x.add(5,5);
+		x.show();
+	}
+}
+
+34)
+class Circle{
+	float radius, area;
+    void init(float radius)
+    {
+		this.radius = radius;
+	}
+    void calculateArea()
+    {
+		this.area =(float)(3.14*Math.pow(radius,2)); 
+	}
+    void display()
+	{
+		System.out.println("Area of circle is: "+area);
+	}	
+}
+
+class CircleDemo{
+	public static void main(String args[]){
+		Circle c = new Circle();
+		c.init(3);
+		c.calculateArea();
+		c.display();
+	}
+}
+
+35)
+import java.util.*;
+
+class MathOperation{
+	static void Add(int a, int b)
+	{
+		int c = a+b;
+		System.out.println("Addition of two numbers are: "+c);
+	}
+	static void Subtract(int a, int b)
+	{
+		int c = a-b;
+		System.out.println("Addition of two numbers are: "+c);
+	}
+	static void Multiply(int a, int b)
+	{
+		int c = a*b;
+		System.out.println("Addition of two numbers are: "+c);
+	}
+	static void Power(int a, int b)
+	{
+		int c =(int)Math.pow(a,b);
+		System.out.println("Addition of two numbers are: "+c);
+	}
+}
+
+class Demo{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter two numbers: ");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		MathOperation z = new MathOperation();
+		z.Add(a,b);
+		z.Subtract(a,b);
+		z.Multiply(a,b);
+		z.Power(a,b);
+	}
+}
+
+36)
+class MathOperation{
+	void multiply(int a, int b){
+		int c = a+b;
+		System.out.println(c);
+	}
+	void multiply(float a, float b, float c){
+		float d = a+b+c;
+		System.out.println(d);
+	}
+	void multiply(int arr[]){
+		int mul = 1;
+		for(int a : arr){
+			mul = mul * a;
+		}
+		System.out.println(mul);
+	}
+	void multiply(double a, int b){
+		double c = (double)(a+b);
+		System.out.println(c);
+	}
+}
+
+class Q36{
+	public static void main(String args[]){
+		MathOperation a = new MathOperation();
+		a.multiply(5,5);
+		a.multiply(5.5f,5.5f,5.5f);
+		a.multiply(5,5,5);
+		a.multiply(5.555f,5);
+	}
+}
+
+37)
+class Person{
+	String name;
+	int age=18;
+	void getData(String name, int age){
+		this.name = name;
+		this.age = age;
+	}
+	void showData(){
+		System.out.println("Name of person is: "+name+" And age is: "+age);
+	}
+}
+
+class Q37{
+	public static void main(String args[]){
+		Person p = new Person();
+		p.getData("Sachin", 18);
+		p.showData();
+		p.getData("sachin", 24);
+		p.showData();
+	}
+}
+
+38)
+class Employee{
+	static int empNo=0;
+	float salary;
+	static float totalSalary=0;
+	void Employee(float salary)
+	{
+		empNo++;
+		this.salary = salary;
+		totalSalary=totalSalary+salary;
+	}
+	void show(){
+		System.out.println("Total employees are: "+empNo+" And total salary of employees are: "+totalSalary);
+	}
+}
+
+class Q38{
+	public static void main(String args[]){
+		Employee e = new Employee();
+		e.Employee(15000);
+		e.show();
+		e.Employee(15000);
+		e.show();
+		e.Employee(15000);
+		e.show();
+	}
+}
+
+39)
+import java.util.Scanner;
+
+	class Product
+	{
+		int pid,quantity;
+		float price;
+		
+		Product(int pid,int quantity,float price)
+		{
+			this.pid=pid;
+			this.quantity=quantity;
+			this.price=price;
+		}
+		
+		static float total(Product []p)
+		{
+			Product test;
+			float sum=0;
+			for(int i=0; i<p.length; i++)
+			{
+				test=p[i];
+				sum=sum+(test.quantity*test.price);
+			}
+			return sum;
+		}
+	}
+
+	class Q39
+	{
+		public static void main(String[] args)
+		{	
+			Product p1=new Product(1,4,700);
+			Product p2=new Product(2,1,300);
+			Product p3=new Product(3,9,800);
+			Product p4=new Product(4,7,600);
+			Product p5=new Product(5,6,1000);
+			Product p[]=new Product[]{p1,p2,p3,p4,p5};
+			Product test;
+			float price[]=new float[p.length];
+			
+			
+			for(int i=0; i<p.length; i++)
+			{
+				test=p[i];
+				price[i]=test.price;
+			}
+			
+			float max=0;
+			for(int i=0; i<price.length; i++)
+			{
+				if(max<price[i])
+				{
+					max=max+price[i];
+					price[i]=max-price[i];
+					max=max-price[i];
+				}
+			}
+			System.out.println("Maximum price of product is: "+max);
+
+			for(int i=0; i<p.length; i++)
+			{
+				test=p[i];
+				if(max==test.price)
+				{
+					System.out.println("pid of heighest price product: "+test.pid);
+				}
+			}
+			
+			float T=Product.total(p);
+			System.out.println("Total amount: "+T);
+			
+		}
+	}	
+
+Q40)
+
+import java.util.Scanner;
+
+	class Student
+	{
+		int roll,age;
+		float score;
+		String name;
+		
+		Student(int roll,String name,int age,float score)
+		{
+			this.roll=roll;
+			this.name=name;
+			this.age=age;
+			this.score=score;
+		}
+		
+		static float total(Product []p)
+		{
+			Product test;
+			float sum=0;
+			for(int i=0; i<p.length; i++)
+			{
+				test=p[i];
+				sum=sum+(test.quantity*test.price);
+			}
+			return sum;
+		}
+	}
+
+	class Q40
+	{
+		public static void main(String[] args)
+		{	
+			int roll,age;
+			float score;
+			String name;
+			Scanner scan=new Scanner(System.in);
+			Student s[]=new Student[10];
+			Student test;
+			
+			for(int i=0; i<4; i++)
+			{
+				System.out.println("Enter roll, name, age and score:");
+				roll=scan.nextInt();
+				name=scan.next();
+				age=scan.nextInt();
+				score=scan.nextFloat();
+				
+				Student s1=new Student(roll,name,age,score);
+				s[i]=s1;
+				
+			}
+			
+			System.out.println("Students who scored between [80-100]: ");
+			for(int i=0; i<4; i++)
+			{
+				if(s[i].score>=80 && s[i].score<=100)
+				{
+					System.out.println("Student Roll is: "+s[i].roll+" Student Name is: "+s[i].name+" Student Age is: "+s[i].age+" Student Score is: "+s[i].score+"%");
+				}
+			}
+			
+			System.out.println("Students who scored between [65-80]: ");
+			for(int i=0; i<4; i++)
+			{
+				if(s[i].score>=65 && s[i].score<80)
+				{
+					System.out.println("Student Roll is: "+s[i].roll+" Student Name is: "+s[i].name+" Student Age is: "+s[i].age+" Student Score is: "+s[i].score+"%");
+				}
+			}
+			
+			System.out.println("Students who scored between [50-65]: ");
+			for(int i=0; i<4; i++)
+			{
+				if(s[i].score>=50 && s[i].score<65)
+				{
+					System.out.println("Student Roll is: "+s[i].roll+" Student Name is: "+s[i].name+" Student Age is: "+s[i].age+" Student Score is: "+s[i].score+"%");
+				}
+			}
+			
+			System.out.println("Students who scored between [45-50]: ");
+			for(int i=0; i<4; i++)
+			{
+				if(s[i].score>=45 && s[i].score<50)
+				{
+					System.out.println("Student Roll is: "+s[i].roll+" Student Name is: "+s[i].name+" Student Age is: "+s[i].age+" Student Score is: "+s[i].score+"%");
+				}
+			}
+		}
+	}
+
+
+Q41)
+import java.util.Scanner;
+	class ThisConstruct
+	{
+		int roll;
+		String name;
+		
+		ThisConstruct(int roll,String name)
+		{
+			this.roll=roll;
+			this.name=name;
+			
+		}
+		
+		ThisConstruct(int roll, String name, String gender)
+		{
+			
+			this(roll,name);
+			System.out.println("Name: "+this.name);
+			System.out.println("Roll no: "+this.roll);	
+			System.out.println("Gender: "+gender);
+			
+		}
+	}
+
+	class Q41
+	{
+		int roll;
+		String name;
+		
+		public static void main(String[] args)
+		{
+			Scanner scan=new Scanner(System.in);
+			System.out.print("Enter Roll no: ");
+			int roll=scan.nextInt();
+			System.out.print("Enter Name: ");
+			String name=scan.next();
+			System.out.print("Enter Gender: ");
+			String gender=scan.next();
+			
+			ThisConstruct s1=new ThisConstruct(roll,name,gender);
+		}
+	}
+
+Q42)
+import java.util.Scanner;
+
+	class Tile
+	{
+		int tlength,twidth;
+		
+		Tile(int tlength,int twidth)
+		{
+			this.tlength=tlength;
+			this.twidth=twidth;
+		}
+		
+		int ttiles(int flength,int fwidth)
+		{
+			int tarea=tlength*twidth;
+			int farea=flength*fwidth;
+			int ttiles=(farea/tarea);
+			return ttiles;
+		}
+	}
+
+	class Q42
+	{
+		int length,width,total;
+		public static void main(String[] args)
+		{	
+			Scanner scan=new Scanner(System.in);
+			Q42 f=new Q42();
+			
+			System.out.println("Enter length of the tile: ");
+			f.length=scan.nextInt();
+			System.out.println("Enter width of the tile: ");
+			f.width=scan.nextInt();
+			Tile t=new Tile(f.length,f.width);
+			
+			
+			System.out.println("\n Enter length of the floor: ");
+			f.length=scan.nextInt();
+			System.out.println("Enter width of the floor: ");
+			f.width=scan.nextInt();
+			
+			f.total=t.ttiles(f.length,f.width);
+			System.out.println("\n Total tiles needed: "+f.total);
+			
+		}
+	}
