@@ -1,0 +1,241 @@
+Q43)
+class OneBHK{
+	int roomArea, hallArea, price;
+	
+	OneBHK(){
+		roomArea = 600;
+		hallArea = 300;
+		price = 500000;
+	}
+	
+	OneBHK(int roomArea, int hallArea, int price){
+		this.roomArea = roomArea;
+		this.hallArea = hallArea;
+		this.price = price;
+	}
+	
+	void show(){
+		System.out.println("OneBHK flat has room Area size: "+roomArea+" SQFT and hallArea size: "+hallArea+" SQFT at price of: "+price);
+	}
+}
+
+class TwoBHK extends OneBHK{
+	int room2Area;
+	static float total_price=0;
+	TwoBHK(){
+		room2Area = 450;
+	}
+	
+	TwoBHK(int roomArea, int hallArea, int price, int room2Area){
+		this.roomArea = roomArea;
+		this.price = price;
+		this.hallArea = hallArea;
+		this.room2Area = room2Area;
+		
+		total_price+=price;
+	}
+	
+	
+	void show(){
+		System.out.println("TwoBHK flat has room Area size: "+roomArea+" SQFT and hallArea size: "+hallArea+" SQFT and Room-2 Area "+room2Area+" SQFT at price of: "+price);
+	}
+}
+
+public class Q43 {
+
+	public static void main(String[] args) {
+		float sum;
+		System.out.println("\nInformation of first flat");
+		TwoBHK f1 = new TwoBHK(500,500,50200,500);
+		f1.show();
+		
+		System.out.println("\nInformation of Second flat");
+		TwoBHK f2 = new TwoBHK(600,700,50200,700);
+		f2.show();
+		
+		System.out.println("\nInformation of Third flat");
+		TwoBHK f3 = new TwoBHK(680,790,55660,900);
+		f3.show();
+		
+		sum=TwoBHK.total_price;
+		System.out.println("\n Sum of price of all the Flates are: "+sum);
+	}
+
+}
+
+
+Q45)
+import java.util.Scanner;
+	class Student
+	{
+		int rollno;
+		float percentage;
+		
+		Student()
+		{
+			rollno=1;
+			percentage=60f;
+		}
+		Student(int rollno,float percentage)
+		{
+			this.rollno=rollno;
+			this.percentage=percentage;
+		}
+		void show()
+		{
+			System.out.println("Roll no: "+rollno);
+			System.out.println("Percentage: "+percentage);
+		}
+	}
+	
+	
+	class CollegeStudent extends Student
+	{
+		int semester;
+		
+		CollegeStudent()
+		{
+			semester=1;
+		}
+		CollegeStudent(int rollno, float percentage,int semester)
+		{
+			super(rollno,percentage);
+			this.semester=semester;
+		}
+		
+		void show()
+		{
+			super.show();
+			System.out.println("Semister : "+semester+"\n");
+		}
+	}
+	
+	
+	class SchoolStudent extends Student
+	{
+		String className;
+		
+		SchoolStudent()
+		{
+			className="CS";
+		}
+		SchoolStudent(int rollno, float percentage,String className)
+		{
+			super(rollno,percentage);
+			this.className=className;
+		}
+		
+		void show()
+		{
+			super.show();
+			System.out.println("Class Name : "+className+"\n");
+			
+		}
+		
+	}
+
+
+	class Q45
+	{
+		public static void main(String args[])
+		{
+			int count=0;
+			CollegeStudent c1=new CollegeStudent(1,65.2f,5);
+			CollegeStudent c2=new CollegeStudent(2,72.0f,3);
+			SchoolStudent s1=new SchoolStudent(3,80.6f,"Science");
+			SchoolStudent s2=new SchoolStudent(4,73.66f,"Commerce");
+			SchoolStudent s3=new SchoolStudent(5,79.99f,"Arts");
+			
+			Student ar[]=new Student[]{c1,c2,s1,s2,s3};
+			
+			for(Student ref: ar)
+			{
+				ref.show();
+			}
+			
+			Scanner scan=new Scanner(System.in);
+			System.out.print("\n Enter roll no.:");
+			int rollno=scan.nextInt();
+			
+			for(Student ref: ar)
+			{
+				if(rollno==ref.rollno)
+				ref.show();
+			}
+			
+			for(Student ref: ar)
+			{
+				if(ref.percentage>75)
+				count++;
+			}
+			System.out.print("Number of Students having A grade: "+count);
+		}
+	}
+
+
+46)
+	class Employee
+	{
+		String name;
+		int age;
+		float salary;
+		
+		Employee(String name,int age,float salary)
+		{
+			this.age=age;
+			this.name=name;
+			this.salary=salary;
+		}
+		
+		void show()
+		{
+			System.out.println("Name: "+name+" Age: "+age+" Salary: "+salary);
+			
+		}
+	}
+
+	class Q46
+	{
+		public static void main(String[] args)
+		{
+			Employee p[]={new Employee("Sachin",23,10000)};
+			
+			for(Employee ref:p)
+			{
+				if(ref instanceof Employee) 
+				{
+					Employee e=(Employee)ref;
+					ref.show();
+				}
+			}
+		}
+	}
+
+
+Q47)
+class A
+	{
+		A()
+		{
+			this(5,5);
+			System.out.println("In non-para Constructor");
+		}
+		A(int a)
+		{
+			System.out.println("In single parameter Constructor");
+		}
+		A(int a1,int a2)
+		{
+			this(10);
+			System.out.println("In double parameter of Constructor"); 
+		}
+	}
+
+
+	class Q47
+	{
+		public static void main(String[] args)
+		{
+			A obj=new A();
+		}
+	}
